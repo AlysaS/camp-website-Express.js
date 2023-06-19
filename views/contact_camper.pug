@@ -1,0 +1,76 @@
+
+
+extends header
+
+block content
+
+    h2 Fill out the form below and we will try to get the message to your camper as soon as possible!! 
+    
+    form(action='/contact_camper_submission', method='GET')#contactForm
+        
+        p
+            label(for='firstname') Enter your child's first name: 
+            input(id='firstname', type='text', name='fname', required)
+        p
+            label(for='lastname') Enter your child's last name: 
+            input(id='lastname', type='text', name='lname', required)
+                
+                
+        p
+            label(for='Grade') What grade is your child coming out of?:  
+            select(name='grade', id='Grade')
+                option() 5th
+                option() 6th
+                option() 7th
+                option() 8th
+                option() 9th
+                option() 10th
+
+        p
+
+            label(for='bunk') Please select your child's bunk:   
+            select(name='bunk' id='bunk')
+                option(selected) Not sure!
+                option 5A
+                option 6A
+                option 6B
+                option 7A
+                option 7B
+                option 7C
+                option 7D
+                option 8A
+                option 8B
+                option 8C
+                option 8D
+                option 9A
+                option 9B
+                option 9C
+                option 9D
+                option 10A
+                option 10B
+                option 10C
+                option 10D
+          
+            
+        p
+            label() Is this message urgent? (Please only click yes if your child needs this message in the next 3 hours) :        
+            label(for='yurgent') Yes
+            input(name='urgent', id='yurgent', type='radio', value='Yes', required)
+            label(for='nurgent') No
+            input(name='urgent', id='nurgent', type='radio', value='No', required)
+         
+            
+           
+        p
+            label(for='message') Message for your child: 
+            textarea(name='message', id='message', rows='4', cols='70', required)
+        
+
+        p 
+            input(type='submit', name='submitButton', value='Sumbit')
+    
+    
+    
+    if sent
+        h2
+            |Your Message was sent!!

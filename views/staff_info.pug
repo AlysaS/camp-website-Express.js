@@ -1,0 +1,20 @@
+
+extends header
+
+block content 
+
+    h1 Here is some information about our staff: 
+
+    table 
+        tr
+            th Last Name
+            th First Name
+            th Job in Camp
+            th Camp Email
+        
+        each staff in info
+            tr
+                td= staff.lastName
+                td= staff.firstName
+                td= staff.job
+                td= staff.camp_email
